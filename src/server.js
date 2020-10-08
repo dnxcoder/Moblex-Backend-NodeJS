@@ -1,11 +1,12 @@
 const express = require('express');
-
+const bodyParser = require('body-parser');
 const app = express();
 
+const routes = require('./routes');
 
-app.get('/', (req,res)=> {
+app.use(bodyParser.json());
+app.use(routes);
 
-    res.send('Welcome to Moblex BACKEND !');
-})
+
 
 app.listen(3030);
